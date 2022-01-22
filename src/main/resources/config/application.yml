@@ -1,0 +1,25 @@
+app:
+  author: et.keramo
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${db.ip}:${db.port}/${db.database}
+    username: ${db.username}
+    password: ${db.password}
+
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: false
+      open-in-view: false
+      properties:
+        hibernate:
+          enable_lazy_load_no_trans: true
+          format_sql: false
+      hibernate:
+        use-new-id-generator-mappings: true
+db:
+  ip: 127.0.0.1
+  port: 5432
+  database: dev
+  username: keramo
+  password: keramo123
